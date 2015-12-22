@@ -1,0 +1,35 @@
+{
+  "name": "nsc",
+  "version": "1.0.0",
+  "description": "New Shiny Camera or Not Shitty Camera",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rezaali/nsc.js.git"
+  },
+  "keywords": [
+    "camera",
+    "webgl",
+    "damping",
+    "easy",
+    "canvas",
+    "minimal"
+  ],
+  "author": "Syed Reza Ali <syed.reza.ali@gmail.com> (http://www.syedrezaali.com/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rezaali/nsc.js/issues"
+  },
+  "homepage": "https://github.com/rezaali/nsc.js#readme",
+  "dependencies": {
+    "gl-matrix": "^2.3.1",
+    "key-pressed": "0.0.1",
+    "mouse-position": "^2.0.0",
+    "mouse-pressed": "^1.0.0",
+    "performance-now": "^0.2.0",
+    "scroll-speed": "^1.0.0"
+  }
+}
