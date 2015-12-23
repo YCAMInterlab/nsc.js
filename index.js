@@ -9,10 +9,13 @@ var key = require('key-pressed');
 
 module.exports = Camera;
 
-function Camera( canvas ) {
+function Camera( canvas, opts ) {
   if ( ! ( this instanceof Camera ) ) {
-    return new Camera( canvas )
+    return new Camera( canvas, opts )
   }
+
+  //Options
+  opts = opts || {};
 
   //Parent Element
   this.canvas = canvas;
@@ -31,9 +34,11 @@ function Camera( canvas ) {
   this.mouseDown = false;
   this.scratchQuat = quat.create();
   this.rotation = quat.create();
-  this.position = vec3.fromValues( 0.0, 0.0, -50.0 );
+
+  this.defaultPosition = opts.position !== undefined ? opts.position : vec3.fromValues( 0.0, 0.0, -2.0 );
+  this.position = vec3.clone( this.defaultPosition );
   this.theta = 0.0;
-  this.damping = 0.93;
+  this.damping = opts.damping || 0.9;
   this.calculateCache = false;
 
   this.size = vec3.create();
@@ -88,7 +93,7 @@ Camera.prototype.resetCheck = function() {
 
 Camera.prototype.reset = function()
 {
-  vec3.set( this.position, 0.0, 0.0, -50.0 );
+  vec3.copy( this.position, this.defaultPosition );
   quat.identity( this.scratchQuat );
   quat.identity( this.rotation );
   mat4.identity( this.cache );
