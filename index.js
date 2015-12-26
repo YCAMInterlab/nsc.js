@@ -159,7 +159,7 @@ Camera.prototype.updateSize = function() {
 }
 
 Camera.prototype.updateEasing = function() {
-  if( Math.abs( this.theta ) > 0.0001 ) {
+  if( Math.abs( this.theta ) > 0.0001 && !this.mouseDown ) {
     this.theta *= this.damping;
     this.updateArcBallRotation( this.theta );
     this.calculateCache = true;
