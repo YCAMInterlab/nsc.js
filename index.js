@@ -36,6 +36,7 @@ function Camera( canvas, opts ) {
   this.rotation = quat.create();
 
   this.defaultPosition = opts.position !== undefined ? opts.position : vec3.fromValues( 0.0, 0.0, -2.0 );
+  this.defaultRotation = opts.rotation !== undefined ? opts.rotation : mat4.create();
   this.position = vec3.clone( this.defaultPosition );
   this.theta = 0.0;
   this.damping = opts.damping || 0.9;
@@ -70,6 +71,7 @@ function Camera( canvas, opts ) {
     this.mouseWheel();
   } ).bind( this ) );
 
+  this.reset();
   this.updateMatrix();
 }
 
@@ -96,7 +98,8 @@ Camera.prototype.reset = function()
   vec3.copy( this.position, this.defaultPosition );
   quat.identity( this.scratchQuat );
   quat.identity( this.rotation );
-  mat4.identity( this.cache );
+  // mat4.identity( this.cache );
+  mat4.copy( this.cache, this.defaultRotation );
   mat4.identity( this.rotmat );
 }
 
