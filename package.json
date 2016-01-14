@@ -1,6 +1,6 @@
 {
   "name": "nsc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "New Shiny Camera",
   "main": "index.js",
   "scripts": {
