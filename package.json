@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rezaali/nsc.js.git"
+    "url": "git+https://github.com/YCAMInterlab/nsc.js.git"
   },
   "keywords": [
     "camera",
@@ -21,9 +21,9 @@
   "author": "Syed Reza Ali <syed.reza.ali@gmail.com> (http://www.syedrezaali.com/)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/rezaali/nsc.js/issues"
+    "url": "https://github.com/YCAMInterlab/nsc.js/issues"
   },
-  "homepage": "https://github.com/rezaali/nsc.js#readme",
+  "homepage": "https://github.com/YCAMInterlab/nsc.js#readme",
   "dependencies": {
     "gl-matrix": "^2.3.1",
     "key-pressed": "0.0.1",
